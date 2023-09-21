@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Luckiest+Guy&family=Poppins:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <title>Aditya-Portfolio</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /* animation: slideUp 1s ease-in-out; */
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .header{
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            z-index: 3;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav ul li{
+            list-style: none;
+            /* justify-content: space-around; */
+            margin: 0 23px;
+
+        }
+        nav ul li a{
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+
+        }
+        nav ul li a:hover{
+            border-width: 2px;
+            border:2px solid #0060bb;
+            
+            border-radius: 10px;
+            text-decoration: none;
+            padding: 10px;
+            color: #0060bb;
+
+        }
+        .left::first-letter{
+            color: #0060bb;
+        }
+        .left{
+            top: -100vh;
+            animation: slideLeft 1s ease-in-out;
+            font-weight: 600;
+            color: black;
+            font-size: 2rem;
+        }
+        .text-dev{
+            animation: slideUp 1s ease-in-out;
+            color: "#F7F7F7";
+            font-size: 18rem;
+            font-family: 'Archivo Black', sans-serif;
+            letter-spacing: -10px;
+            text-shadow: 10px 3px 4px rgba(242, 234, 234, 0.5);
+            transition: margin-left 2.5s;
+        }
+        .firstSection{
+            width: 100%;
+            top: 60vh;
+            position: fixed;
+        }
+        .firstSection> div{
+            margin-left: 200px;
+            width: 40%;
+        }
+        .leftSection .btn{
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: #E6F9C3;
+            border-radius: 30px;
+            border: 0px;
+        }
+        .leftSection .btn:hover{
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: white;
+            border: 2px solid #E6F9C3;
+            border-radius: 30px;
+        }
+        /* .leftSection .btn:hover{
+            padding: 10px;
+            background: white;
+            color: rgb(0,0,33);
+            
+        } */
+        .rightSection{
+            position: relative;
+            right: 5rem;
+            margin-top: -30rem;
+        }
+        .firstSection{
+            align-content: center;
+            display: flex;
+            justify-content: space-around;
+            margin: 10vh 0;
+        }
+        .container{
+            margin-top:-5vh;
+            position: relative;
+            overflow: hidden;
+            top:-100px;
+        }
+        .leftSection{
+            animation: slideLeft 1s ease-in-out;
+            color: black;
+            line-height: 1.5;
+            font-size: 40px;
+        }
+        .purple{
+            font-weight: 600;
+            color: #0060bb;
+        }
+        #element{
+            font-weight: 600;
+            color:#0060bb;
+        }
+
+        .text-gray{
+            color: gray;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        .hr1{
+            background: rgb(170, 170, 238);
+            margin-left: 10vh;
+            margin-right: 10vh;
+            margin-bottom: 5vh;
+            margin-top: -10vh;
+            border: 0;
+            height: 1.1px;
+        }
+        .image-top{
+            width: 63px;
+            position: relative;
+            top: -50px;
+            left: -25px;
+        }
+        .vertical-title{
+            position: relative;
+            top: 55px;
+            width: 150px;
+        }
+        .vertical-desc{
+            position: relative;
+            top: 55px;
+            width: 150px;
+            font-size: 12px;
+            color: gray;
+        }
+        .background-transition {
+            position: fixed;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Start with white background */
+            animation: slideDown 1s ease-in-out forwards; /* Apply the animation */
+            z-index: -1; /* Place it behind other content */
+        }
+        .fading-image{
+            object-fit: cover;
+            opacity: 1; /* Initial opacity */
+            transition: opacity 1.5s;
+        }
+
+        /* <--------------------------   Second Section ------------------------------> */
+
+        .SecondSection{
+            top:60vh;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: white; /* Background color of the second page */
+            z-index: 2;
+            font-size: 2rem;
+        }
+        .wrapper-one{
+            display: flex;
+        }
+        .wrapper-two{
+            display: flex;
+        }
+        .left-secondSec{
+            margin-top: 20vh;
+            margin-left: 200px;
+        }
+        .right-secondSec{
+            /* padding-left: 10vh;
+            padding-right: 10vh;
+            padding-top: 10vh;
+            background-color: #E6F9C3; */
+            margin-top: 25vh;
+            width: 40%;
+            margin-left: 100px;
+        }
+        .me-working{
+            opacity: 0;
+            margin-top: 10%;
+        }
+        .about-me{
+            line-height: 2;
+            opacity: 0; 
+            font-size: medium;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            color: gray;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .hr2{
+            background: rgb(170, 170, 238);
+            margin-left: 10vh;
+            margin-right: 10vh;
+            margin-bottom: 5vh;
+            margin-top: 10vh;
+            border: 0;
+            height: 1.9px;
+        }
+        .About-me-heading{
+             opacity: 0;
+            color: black;
+            line-height: 1.2;
+            font-size: 5rem;
+            font-weight: 600;
+        }
+        .social-media{
+            display: flex;
+        }
+        .social-media-handels{
+            justify-content: space-around;
+            list-style: none;
+            display: flex;
+        }
+        /* .social-media-handels li{
+            
+        } */
+        .social-media-items{
+            padding-right: 40px;
+            padding-top: 20px;
+        }
+        .nameAndInfo{
+            margin-top: 20px;
+            color: #1c73c4;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .fade-in {
+            opacity: 1; /* When the .fade-in class is added, opacity becomes 1 */
+            animation: fade-in 1s forwards
+        }
+
+        /* <--------------------------- Third Section ------------------------------------> */
+
+
+        .third-section{
+            /* margin-top: 60vh;
+            width: 100%;
+            height: 100vh;
+            background-color: white; /* Background color of the second page */
+            /* z-index: 2;
+            display: flex;
+            width: 100%; */ 
+        }
+
+        .wrapper-third-section{
+            width: 100%;
+            margin-top: 5%;
+            height: auto;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .project-items{
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        .project-items:hover{
+            cursor: pointer;
+            border-radius: 10px;
+            transform: scale(1.1 );
+            /* width: 500px;
+            height: auto;
+            transition: 3.5s; */
+        }
+        .projects{
+            text-align: center;
+            margin-top: 5%;
+            font-size: 4rem;
+            font-weight: 600;
+            color: black;
+        }
+        .projects-line{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            /* text-align: center; */
+        }
+        /* .project-desc:hover .project-items{
+            cursor: pointer;
+            border-radius: 10px;
+            transform: scale(1.1 );
+        } */
+        .project-desc{
+            margin-top: 10px;
+            margin-bottom: 100px;
+            width: 250px;
+            font-size: 0.8rem;
+            color: black;
+        }
+        .project-desc1{
+            margin-top: 10px;
+            margin-bottom: 100px;
+            width: 400px;
+            font-size: 0.8rem;
+            color: black;
+        }
+        .project-title{
+            color:#1c73c4;
+            font-size: 1.2rem;
+        }
+        .line-above-projects{
+            margin-top: 150px;
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        .wrapper-two{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .heading-what-i-do{
+            /* opacity: 0; */
+            text-align: center;
+            width: 100%;
+            margin-top: 15vh;
+            
+            color: black;
+            line-height: 1.2;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        .what-i-do{
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .what-i-do-item{
+
+            margin-top: 50px;
+            display: flex;
+            width: 1000px;
+            background-color: rgb(247, 247, 247);
+            border-radius: 10px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: transform 0.5s ease;
+        }
+        .what-i-do-item1{
+            width: 1000px;
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            border-radius: 10px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: transform 0.5s ease;
+        }
+        .what-i-do-item:hover{
+            background-color: #b9d1e7;
+            transform: scale(1.2);
+        }
+        .what-i-do-item1:hover{
+            background-color: #b9d1e7;
+            transform: scale(1.2);
+        }
+        .what-i-do-desc{
+            padding: 20px;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .what-i-do-item-desc{
+            font-size: 0.8rem;
+            color: black;
+        }
+        .what-i-do-item-heading{
+            justify-content: center;
+            align-items: center;
+            color:#1c73c4;
+            font-size: 1.2rem;
+        }
+        .contact-form{
+            
+            margin-top: 5h;
+            padding: 30px;
+             /* position: absolute;
+             left: 50%; */
+             /* align-self: center; */
+             /* left: 50%; */
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            
+            /* width: 700px; */
+            width: 100%;
+            font-size: 1rem;
+            padding: 15px;
+            border: none; /* Remove borders */
+            border-radius: 10px; /* Rounded corners for fields */
+            background-color:#ebebeb; /* Field background color */
+        }
+        .contact-me{
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            /* width: 100%; */
+            justify-content: center;
+        }
+        #email{
+            /* margin-top: -30px; */
+        }
+        .wrapper-four{
+            width:700px;
+            align-self: center;
+        }
+        .label{
+            margin-top: 10px;
+            color: black;
+            font-size: 1rem;
+        }
+        .submit-button{
+            cursor: pointer;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            width: 200px;
+            align-self: center;
+            background: #2684dc;
+            padding: 15px;
+            border-radius: 10px;
+            border: 0px;
+        }
+        .line-above-contact-me{
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .footer{
+            width: 100%;
+            height: 100px;
+            background-color:#ebebeb;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        
+
+        @keyframes slideLeft {
+        0% {
+            transform: translateX(-100%); /* Start from outside the left edge */
+        }
+        100% {
+            transform: translateX(0); /* Move to the normal position */
+        }
+        }
+        @keyframes slideUp{
+        0% {
+            transform: translateY(-100%); /* Start from outside the left edge */
+        }
+        100% {
+            transform: translateX(0); /* Move to the normal position */
+        }
+        }
+        @keyframes slideDown {
+        0% {
+            top: 100%; /* Slide from the bottom */
+            background-color: black; /* Initial background color */
+        }
+        100% {
+            top: 0; /* Slide up to the top */
+            background-color: white; /* Final background color */
+        }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1; /* At the end of the animation, opacity becomes 1 */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background-transition"></div>
+    <header class="header">
+        <nav>
+            <div class="left">Aditya.</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#" id="scrollToFirstSection">home</a></li>
+                    <li><a href=".SecondSection">About</a></li>
+                    <li><a href=".wrapper-two">Service</a></li>
+                    <li><a href=".projects">Projects</a></li>
+                    <li><a href=".wrapper-four">Contact Me</a></li>
+                </ul>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const navbarLinks = document.querySelectorAll("nav a");
+            
+                    navbarLinks.forEach((link) => {
+                        link.addEventListener("click", (e) => {
+                            e.preventDefault();
+            
+                            const targetClass = link.getAttribute("href").substring(1);
+                            const targetElement = document.querySelector("." + targetClass);
+            
+                            if (targetElement) {
+                                targetElement.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }
+                        });
+                    });
+                });
+            </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollToFirstSectionLink = document.getElementById("scrollToFirstSection");
+        scrollToFirstSectionLink.addEventListener("click", function (e) {
+            e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth", // Add smooth scrolling effect
+                });
+        });
+    });
+</script>
+
+            
+            
+            
+            
+            
+            
+            
+        </nav>
+    </header>
+    <main>
+        <section class="text-developer">
+            <h1 class="text-dev">developer</h1>
+        </section>
+        <section class="firstSection">
+            <div class="container">
+                <div class="leftSection">Hi! I am <span class="purple">Aditya</span>
+                    <div>and i am a passionate</div>
+                    <span id="element"></span>
+                    <div class="buttons">
+                        <a href="https://drive.google.com/file/d/1W_Bp66AyB3LqrdxqFB610BodbmsFteLL/view?usp=sharing"><button class="btn">Download Resume</button></a>
+                        <a href="https://github.com/AdityaSingh021"><button class="btn">Visit Github</button></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="rightSection">
+                <img src="My Sticker.png" alt="Developer" height="750px" width="500px" class="fading-image">
+            </div>
+        </section>
+        <!-- <hr class="hr1"/> -->
+
+
+            <section class="SecondSection">
+
+                <script>
+                    document.addEventListener("scroll", function() {
+                    var secondPage = document.querySelector(".second-page");
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    // Calculate the new margin-top value based on scroll position
+                    var newMarginTop = Math.max(0, 100 - scrollTop);
+                    secondPage.style.marginTop = newMarginTop + "vh";
+                });
+                </script>
+
+                <div class="wrapper-one">
+
+                    
+                <div class="left-secondSec">
+                    <img src="me-circle.png" alt="Image" class="me-working" width="400" height="400">
+                </div>
+                <div class="right-secondSec">
+                    <h1 class="About-me-heading">About Me</h1>
+                    <h2 class="nameAndInfo">ADITYA SINGH - DEVELOPER</h2>
+                    <p class="about-me">Hey, I'm Aditya Singh, a passionate web and app developer, UI/UX designer, and competitive programmer. With 2 years of experience under my belt, I'm on a mission to transform ideas into captivating digital experiences.
+                        My journey began with a love for coding and an eye for design.
+                        </p>
+                    <div class="social-media">
+                        <ul class="social-media-handels">
+                            <li class="social-media-items"><a href="https://www.linkedin.com/in/aditya-singh22/"><img src="linkedin.png" alt="" height="40" width="40"></a></li>
+                            <li class="social-media-items"><a href="https://github.com/AdityaSingh021"><img src="github_1.png" alt="" height="40" width="40"></a></li>
+                            <li class="social-media-items"><a href="https://www.instagram.com/singh.adi1/"><img src="instagram_1.png" alt="" height="40" width="40"></a></li>
+                            <li class="social-media-items"><a href="https://www.facebook.com/profile.php?id=100024446328703"><img src="facebook.png" alt="" height="40" width="40"></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                </div>
+
+                <hr class="line-above-projects"/>
+
+                <div class="wrapper-two">
+
+                    <div >
+                        <h1 class="heading-what-i-do">Services I provide</h1>
+                        <hr class="projects-line" width="450px"/>
+                    </div>
+
+                    <div class="what-i-do">
+
+                        <div class="what-i-do-item1">
+
+                            <img src="app_dev_!.png" alt="app_dev" width="200" height="200">
+                            <div class="what-i-do-desc">
+
+                                <h2 class="what-i-do-item-heading">Mobile Application Development</h2>
+                            <p class="what-i-do-item-desc">As an experienced Android Developer with a solid track record of 2 years in the field, I bring a wealth of expertise to the table. Throughout my career, I have been responsible for the development of various dynamic applications, including notable projects such as SureCall, Wired, and revamp, which have demonstrated my proficiency in Android app development.
+
+                                One of my key strengths lies in my Java programming skills. I am not only well-versed in Java but also a competitive programmer in the language. This expertise enables me to write efficient, clean, and scalable code for Android applications.</p>
+
+                            </div>
+                            
+
+                        </div>
+                        <div class="what-i-do-item">
+                            
+                            <img src="web_dev.png" alt="" width="200" height="200">
+                            <div class="what-i-do-desc">
+
+                                <h2 class="what-i-do-item-heading">Web Development</h2>
+                            <p class="what-i-do-item-desc">As a dedicated and aspiring Web Developer, I have honed my skills in a range of essential technologies and frameworks, making me a valuable asset in the world of web development. With expertise in HTML, CSS, JavaScript, and React, I am well-prepared to create engaging and dynamic web applications.
+
+                                My proficiency in HTML and CSS enables me to craft visually appealing and responsive web designs. I pay meticulous attention to detail, ensuring that every element of a web page is both aesthetically pleasing and functional. I take pride in creating user-friendly interfaces that enhance the overall user experience.</p>
+
+                            </div>
+                        </div>
+                        <div class="what-i-do-item">
+                            
+                            <img src="ui_design.jpg" alt="" width="200" height="200">
+                            <div class="what-i-do-desc">
+
+                                <h2 class="what-i-do-item-heading">UI/UX design</h2>
+                            <p class="what-i-do-item-desc">As a UI/UX Designer, I bring a unique blend of creativity and functionality to the world of digital design. With a passion for creating intuitive and visually appealing user interfaces, I am dedicated to enhancing the user experience across various digital platforms.
+
+                                My design journey has equipped me with a profound understanding of both UI (User Interface) and UX (User Experience) principles, allowing me to strike the delicate balance between aesthetics and usability. I have a keen eye for detail and a deep appreciation for the importance of user-centric design.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <hr class="line-above-projects"/>
+                <div class="projects">Projects<hr class="projects-line" width="450px"/></div>
+                <div class="wrapper-third-section">
+
+                    <div class="component">
+                        <a href="https://github.com/AdityaSingh021/Gossip"><img class="project-items" src="Wired.png" alt="Wired" height="300px" width="auto"></a>
+                        <h2 class="project-title">Wired</h2>
+                        <p class="project-desc1">Revamp" is a cutting-edge home automation application designed to streamline and enhance the control and management of various smart devices and systems within your home.</p>
+
+                    </div>
+
+
+                    <div class="component">
+                        <a href="https://github.com/AdityaSingh021/REVAMP/tree/master"><img class="project-items" src="Revamp_collage.png" alt="Revamp" height="300px" width="auto"></a>
+                        <h2 class="project-title">Revamp</h2>
+                        <p class="project-desc">Revamp" is a cutting-edge home automation application designed to streamline and enhance the control and management of various smart devices and systems within your home.</p>
+                    </div>
+
+
+                    <div class="component">
+                        <img  class="project-items" src="Profolio.png" alt="ProFolio" height="300px" width="auto">
+                        <h2 class="project-title">ProFolio</h2>
+                        <p class="project-desc1">Revamp" is a cutting-edge home automation application designed to streamline and enhance the control and management of various smart devices and systems within your home.</p>
+                    </div>
+
+                    <div class="component">
+                        <img  class="project-items" src="revamp.png" alt="ProFolio" height="300px" width="auto">
+                        <h2 class="project-title">Impulse</h2>
+                        <p class="project-desc">Revamp" is a cutting-edge home automation application designed to streamline and enhance the control and management of various smart devices and systems within your home.</p>
+                    </div>
+
+                </div>
+
+                
+                <d class="contact-me">
+                    <hr class="line-above-contact-me"/>
+                    <div class="projects">Contact me<hr class="projects-line" width="450px"/></div>
+
+                    <div class="wrapper-four">
+
+                        
+                    
+                        <form class="contact-form" action="https://formsubmit.co/339159e9fe9a001499387f5be7dc5c02" method="POST">
+                            <label for="name" class="label">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                    
+                            <label for="email" class="label">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                    
+                            <label for="message" class="label">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                            <button type="submit" class="submit-button">Submit</button>
+                        </form>
+
+                    </div>
+
+                    <div class="footer">
+
+
+                        <div class="left">Aditya.</div>
+                        <div class="social-media">
+                            <ul class="social-media-handels">
+                                <li class="social-media-items"><a href="https://www.linkedin.com/in/aditya-singh22/"><img src="linkedin.png" alt="" height="40" width="40"></a></li>
+                                <li class="social-media-items"><a href="https://github.com/AdityaSingh021"><img src="github_1.png" alt="" height="40" width="40"></a></li>
+                                <li class="social-media-items"><a href="https://www.instagram.com/singh.adi1/"><img src="instagram_1.png" alt="" height="40" width="40"></a></li>
+                                <li class="social-media-items"><a href="https://www.facebook.com/profile.php?id=100024446328703"><img src="facebook.png" alt="" height="40" width="40"></a></li>
+    
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </d>
+
+                <script>
+    
+                    const secondPage = document.querySelector('.SecondSection');
+                    const fadeElements = document.querySelectorAll('.me-working, .about-me,.About-me-heading');
+    
+                    window.addEventListener('scroll', () => {
+                    const triggerPoint = secondPage.offsetTop - window.innerHeight +300; // Adjust the scroll position
+                    const scrollTop = window.scrollY;
+    
+                    if (scrollTop >= triggerPoint) {
+                        fadeElements.forEach(element => {
+                        element.classList.add('fade-in');
+                        });
+                    }
+                    });
+    
+                </script>
+    
+                
+            </section>
+        
+        <hr class="hr2"/>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+      <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+        strings: ['Web Developer', 'Application Developer','UI/UX designer','Competitive Programmer.'],
+        typeSpeed: 50,
+        });
+    </script>
+</body>
+</html>
